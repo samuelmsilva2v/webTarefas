@@ -8,14 +8,16 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './cadastrar-categoria.component.html',
-  styleUrl: './cadastrar-categoria.component.css'
+  styleUrls: ['./cadastrar-categoria.component.css']
 })
+
 export class CadastrarCategoriaComponent {
 
   constructor(private httpClient: HttpClient) { }
 
   form = new FormGroup({
-    nome: new FormControl('', [Validators.required, Validators.minLength(6)])
+    nome: new FormControl('', [Validators.required,
+    Validators.minLength(6)])
   })
 
   get f() {
@@ -23,16 +25,12 @@ export class CadastrarCategoriaComponent {
   }
 
   onSubmit() {
-    this.httpClient
-      .post('http://localhost:8080/api/categorias?nome='
-        + this.form.value.nome, {}, {
-        responseType: 'text'
-      }).subscribe({
-        next: (data) => {
-          alert(data);
-          this.form.reset();
-        }
-      })
+    const nome = this.form.value.nome;
+    this.httpClient.post('http://localhost:8080/api/categorias', { nome }, { responseType: 'text' }).subscribe({
+      next: (data) => {
+        alert(data);
+        this.form.reset();
+      }
+    })
   }
-
 }
