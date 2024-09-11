@@ -1,1 +1,18 @@
-<p>editar-categoria works!</p>
+<h3>Edição de categoria</h3>
+<p>Utilize o formulário para alterar uma categoria.</p>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div class="mb-3">
+        <label>Nome da categoria:</label>
+        <input type="text" class="form-control" placeholder="Digite aqui" formControlName="nome" />
+        <div *ngIf="f['nome'].touched && f['nome'].invalid" class="text-danger">
+            Por favor, informe o nome da categoria com pelo menos 6 caracteres.
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <input type="submit" class="btn btn-primary" value="Salvar alterações" [disabled]="form.invalid" />
+    </div>
+
+</form>

@@ -1,37 +1,32 @@
-<div class="container">
-    <div class="card mt-3">
-        <div class="card-body">
+<h3>Consulta de categorias</h3>
+<p>Listagem de categorias cadastradas:</p>
 
-            <h3>Sistema de controle de tarefas</h3>
-            <p>Listagem de categorias cadastradas:</p>
-
-            <table class="table table-sm table-hover">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nome da categoria</th>
-                        <th>Operações</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr *ngFor="let c of categorias">
-                        <td>{{c.id}}</td>
-                        <td>{{c.nome}}</td>
-                        <td>
-                            <button class="btn btn-sm btn-outline-primary me-2">Editar</button>
-                            <button class="btn btn-sm btn-outline-danger me-2">Excluir</button>
-                            <button class="btn btn-sm btn-outline-success me-2">Incluir tarefa</button>
-                        </td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="3">Quantidade de categorias: {{categorias.length}}</td>
-                    </tr>
-                </tfoot>
-            </table>
-
-        </div>
-    </div>
-</div>
+<table class="table table-sm table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome da categoria</th>
+            <th>Operações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of categorias">
+            <td>{{ c.id }}</td>
+            <td>{{ c.nome }}</td>
+            <td>
+                <button class="btn btn-sm btn-outline-primary me-2" [routerLink]="['/pages/editar-categoria', c.id]">
+                    Editar
+                </button>
+                <button class="btn btn-sm btn-outline-danger me-2" (click)="onDelete(c.id)">
+                    Excluir
+                </button>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">Quantidade de categorias:
+                {{ categorias.length }}</td>
+        </tr>
+    </tfoot>
+</table>

@@ -1,0 +1,39 @@
+<h3>Cadastro de tarefa</h3>
+<p>Preencha o formulário para incluir uma tarefa.</p>
+
+<form>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label>Nome da tarefa:</label>
+            <input type="text" class="form-control" />
+        </div>
+        <div class="col-md-3">
+            <label>Data da tarefa:</label>
+            <input type="date" class="form-control" />
+        </div>
+        <div class="col-md-3">
+            <label>Selecione a categoria:</label>
+
+
+            <select class="form-select">
+                <option value="">Escolha uma opção</option>
+                <option *ngFor="let c of categorias" value="{{c.id}}">
+                    {{c.nome}}
+                </option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <label>Descrição da tarefa:</label>
+            <textarea class="form-control"></textarea>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <input type="submit" class="btn btn-success" value="Realizar Cadastro" />
+        </div>
+    </div>
+</form>
