@@ -1,27 +1,81 @@
-# WebTarefas
+# Tarefas Web
+[🇺🇸 Read in English](#tasks-web)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.3.
+Front-end desenvolvido em Angular para gerenciamento de tarefas e categorias, integrando com a API REST [tarefas-api](https://github.com/samuelmsilva2v/tarefas-api).
 
-## Development server
+> Projeto de portfólio / estudo pessoal — um dos primeiros deste tipo que fiz.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Pré-requisitos
+- Node.js e npm instalados: [Node.js](https://nodejs.org/)
+- Angular CLI instalado globalmente:
+```bash
+npm install -g @angular/cli
+```
+- O [tarefas-api](https://github.com/samuelmsilva2v/tarefas-api) rodando em `http://localhost:8080`
 
-## Code scaffolding
+## Tecnologias
+- Angular 18
+- Reactive Forms
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Funcionalidades
+- Cadastro, edição e consulta de categorias
+- Cadastro e edição de tarefas
+- Consulta de tarefas por período de datas (a API exige um intervalo — não há listagem sem filtro)
 
-## Build
+## Instalação
+1. Clone o repositório:
+```bash
+git clone https://github.com/samuelmsilva2v/tarefas-web.git
+cd tarefas-web
+```
+2. Instale as dependências:
+```bash
+npm install
+```
+3. Rode o front-end:
+```bash
+ng serve
+```
+Acesse http://localhost:4200 (com a API já rodando).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+# Tasks Web
+[🇧🇷 Leia em Português](#tarefas-web)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Front-end built with Angular for managing tasks and categories, integrating with the [tarefas-api](https://github.com/samuelmsilva2v/tarefas-api) REST API.
 
-## Running end-to-end tests
+> Personal portfolio / study project — one of the earliest of this kind I built.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Prerequisites
+- Node.js and npm installed: [Node.js](https://nodejs.org/)
+- Angular CLI installed globally:
+```bash
+npm install -g @angular/cli
+```
+- [tarefas-api](https://github.com/samuelmsilva2v/tarefas-api) running at `http://localhost:8080`
 
-## Further help
+## Technologies
+- Angular 18
+- Reactive Forms
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Features
+- Category registration, editing and lookup
+- Task registration and editing
+- Task lookup by date range (the API requires a range — there's no unfiltered listing)
+
+## Installation
+1. Clone the repository:
+```bash
+git clone https://github.com/samuelmsilva2v/tarefas-web.git
+cd tarefas-web
+```
+2. Install dependencies:
+```bash
+npm install
+```
+3. Run the front-end:
+```bash
+ng serve
+```
+Access http://localhost:4200 (with the API already running).
